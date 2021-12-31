@@ -1,0 +1,13 @@
+.img-section {
+  height: 401px;
+  width: 100%;
+}
+.card-container {
+  background: #fff;
+  border-radius: 5px;
+}
+
+.detail-section p {
+  padding: 0.2rem;
+  font-family: "Roboto", sans-serif;
+}

@@ -1,10 +1,16 @@
 import React from "react";
 import DetailCard from "../DetailCard";
-const CardHolder = () => {
+import IEmployee from "../../types/Employee";
+import "./styles.css";
+
+const CardHolder = ({ employeesData }: { employeesData: IEmployee[] }) => {
   return (
-    <div>
-      Holder
-      <DetailCard />
+    <div className="card-holder">
+      {console.log(employeesData)}
+      {employeesData?.length > 0 &&
+        employeesData.map((employee: IEmployee) => {
+          return <DetailCard employee={employee} />;
+        })}
     </div>
   );
 };
