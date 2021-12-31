@@ -19,7 +19,7 @@ const FilterAndTools = ({
       }
     };
     getData();
-  }, []);
+  }, [setEmployeesData]);
 
   return <div>Filter</div>;
 };
