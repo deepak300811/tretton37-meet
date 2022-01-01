@@ -5,9 +5,23 @@
 .card-container {
   background: #fff;
   border-radius: 5px;
+  box-shadow: -1px 0px 12px 4px rgba(200, 200, 200, 0.59);
+  -webkit-box-shadow: -1px 0px 12px 4px rgba(200, 200, 200, 0.59);
+  -moz-box-shadow: -1px 0px 12px 4px rgba(200, 200, 200, 0.59);
+}
+.detail-section {
+  padding: 0.2rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .detail-section p {
-  padding: 0.2rem;
   font-family: "Roboto", sans-serif;
+}
+.detail-section p:first-child {
+  margin-bottom: 0.4rem;
+}
+
+.socials a {
+  font-size: 1.2rem;
 }

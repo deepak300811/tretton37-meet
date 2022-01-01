@@ -6,7 +6,10 @@ const EmployeeContainer = () => {
   const [employeesData, setEmployeesData] = useState([]);
   return (
     <div className="container">
-      Container <FilterAndTools setEmployeesData={setEmployeesData} />{" "}
+      <FilterAndTools
+        setEmployeesData={setEmployeesData}
+        employeesData={employeesData}
+      />
       <CardHolder employeesData={employeesData} />
     </div>
   );

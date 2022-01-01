@@ -9,7 +9,7 @@ const CardHolder = ({ employeesData }: { employeesData: IEmployee[] }) => {
       {console.log(employeesData)}
       {employeesData?.length > 0 &&
         employeesData.map((employee: IEmployee) => {
-          return <DetailCard employee={employee} />;
+          return <DetailCard employee={employee} key={employee.email} />;
         })}
     </div>
   );

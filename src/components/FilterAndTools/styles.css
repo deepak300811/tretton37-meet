@@ -1,0 +1,21 @@
+.filter-area {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: -1px 0px 12px 4px rgba(200, 200, 200, 0.59);
+  -webkit-box-shadow: -1px 0px 12px 4px rgba(200, 200, 200, 0.59);
+  -moz-box-shadow: -1px 0px 12px 4px rgba(200, 200, 200, 0.59);
+}
+.filter-area input {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #888888;
+}
+#sort {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #888888;
+}
