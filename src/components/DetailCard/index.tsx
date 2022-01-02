@@ -27,6 +27,7 @@ const DerailCard = ({ employee }: { employee: IEmployee }) => {
                 className="mr-point-4"
                 href={`https://www.linkedin.com/${employee.linkedIn}`}
                 target="_blank"
+                rel="noreferrer"
               >
                 <i className="fa fab fa-linkedin "></i>
               </a>
@@ -36,6 +37,7 @@ const DerailCard = ({ employee }: { employee: IEmployee }) => {
                 className="mr-point-4"
                 href={`https://github.com/${employee.gitHub}`}
                 target="_blank"
+                rel="noreferrer"
               >
                 <i className="fa fab fa-github "></i>
               </a>
@@ -44,6 +46,7 @@ const DerailCard = ({ employee }: { employee: IEmployee }) => {
               <a
                 href={`https://twitter.com/${employee.twitter}`}
                 target="_blank"
+                rel="noreferrer"
               >
                 <i className="fa fab fa-twitter-square "></i>
               </a>
