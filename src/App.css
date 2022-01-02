@@ -16,3 +16,12 @@ a {
 .mr-point-4 {
   margin-right: 0.4rem;
 }
+.mb-point-5 {
+  margin-bottom: 0.5rem;
+}
+.mb-point-2 {
+  margin-bottom: 0.2rem;
+}
+.font-bold {
+  font-weight: 400;
+}

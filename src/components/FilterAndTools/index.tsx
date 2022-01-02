@@ -7,9 +7,13 @@ import "./styles.css";
 const FilterAndTools = ({
   employeesData,
   setEmployeesData,
+  setIslistView,
+  isListView,
 }: {
   employeesData: IEmployee[];
   setEmployeesData: Function;
+  setIslistView: Function;
+  isListView: boolean;
 }) => {
   const [sortBy, setSortBy] = useState("");
   // const [fetchCount, setFetchCount] = useState(0);
@@ -76,6 +80,9 @@ const FilterAndTools = ({
   const handelFilter = (e: any) => {
     setFilteredData(e.target.value);
   };
+  const handelToggle = () => {
+    setIslistView(!isListView);
+  };
   return (
     <>
       <section className="filter-area">
@@ -92,6 +99,19 @@ const FilterAndTools = ({
           placeholder="Filter by Name or Office"
           onChange={(e) => handelFilter(e)}
         ></input>
+        <div className="switch-container">
+          Grid view
+          <label className="switch">
+            <input
+              type="checkbox"
+              value="toggle-grid"
+              checked={isListView}
+              onChange={handelToggle}
+            />
+            <div></div>
+          </label>
+          List view
+        </div>
       </section>
     </>
   );

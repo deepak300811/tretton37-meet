@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useRef } from "react";
 import IEmployee from "../../types/Employee";
 import "./styles.css";
 
-const DerailCard = ({ employee }: { employee: IEmployee }) => {
+const DerailCard = ({
+  employee,
+  isListView,
+}: {
+  employee: IEmployee;
+  isListView: boolean;
+}) => {
+  const empTempText = employee.mainText;
+  const empMainText = useRef(null);
+  useEffect(() => {
+    const temp = empMainText.current;
+    temp.innerHTML = empTempText;
+  }, []);
   return (
     <>
-      <div className="card-container p-1">
+      <div className={`card-container p-1 ${isListView ? "list" : ""}`}>
         <section
           className="img-section"
           style={{
@@ -16,10 +29,41 @@ const DerailCard = ({ employee }: { employee: IEmployee }) => {
             }) no-repeat center 20% / cover`,
           }}
         ></section>
-        <section className="detail-section mt-1">
-          <div className="detail-fields">
-            <p>{employee.name}</p>
-            <p>Office: {employee.office}</p>
+        <section className="detail-section mt-1 ">
+          <div className="detail-fields mb-point-5">
+            <div className="mb-point-5">
+              <p>
+                {" "}
+                <strong> {employee.name}</strong>
+              </p>{" "}
+            </div>
+            <div className="mb-point-5">
+              <p>
+                <strong>Office:</strong> {employee.office}
+              </p>
+            </div>
+            <div className={`list-${isListView ? "show" : "hide"} mb-point-5`}>
+              <p>
+                <strong>Email:</strong> {employee.email}
+              </p>
+            </div>
+            <div className={`list-${isListView ? "show" : "hide"} mb-point-5`}>
+              <p className="mb-point-2">
+                {" "}
+                <strong> About:</strong>
+              </p>{" "}
+              <p ref={empMainText}></p>
+            </div>
+            <div className={`list-${isListView ? "show" : "hide"} mb-point-5`}>
+              <p>
+                <strong>Manager:</strong> {employee.manager}
+              </p>
+            </div>
+            <div className={`list-${isListView ? "show" : "hide"}`}>
+              <p>
+                <strong> Phone:</strong> {employee.phoneNumber}
+              </p>
+            </div>
           </div>
           <div className="socials">
             {employee.linkedIn && (
