@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { useRef } from "react";
 import IEmployee from "types/Employee";
 import "./styles.css";
@@ -19,7 +19,7 @@ const FilterAndTools = ({
   // const [fetchCount, setFetchCount] = useState(0);
   const [tempArr, setTempArr] = useState<IEmployee[]>([]);
   const [filterSort, setFilterSort] = useState(0);
-  const inputRef: any = useRef(null);
+  const inputRef = useRef(null) as React.MutableRefObject<HTMLInputElement>;
 
   useEffect(() => {
     const getData = async () => {
@@ -39,13 +39,10 @@ const FilterAndTools = ({
     getData();
   }, [setEmployeesData]);
 
-  const selectSortBy = (e: any) => {
+  const selectSortBy = (e: ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value) {
       setSortBy(e.target.value);
     }
-    // else {
-    //   setFetchCount((prev) => prev + 1);
-    // }
   };
   const sortCompareName = (obj1: IEmployee, obj2: IEmployee) => {
     return obj1.name.localeCompare(obj2.name);
@@ -77,7 +74,7 @@ const FilterAndTools = ({
       setFilterSort((prev) => prev + 1);
     }
   };
-  const handelFilter = (e: any) => {
+  const handelFilter = (e: ChangeEvent<HTMLInputElement>) => {
     setFilteredData(e.target.value);
   };
   const handelToggle = () => {

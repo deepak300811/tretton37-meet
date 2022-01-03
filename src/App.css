@@ -13,6 +13,9 @@ a {
 .p-1 {
   padding: 1rem;
 }
+.p-point-5 {
+  padding: 1.5rem;
+}
 .mr-point-4 {
   margin-right: 0.4rem;
 }
@@ -24,4 +27,10 @@ a {
 }
 .font-bold {
   font-weight: 400;
+}
+.inline-block {
+  display: inline-block;
+}
+strong {
+  font-weight: 500;
 }

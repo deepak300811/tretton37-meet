@@ -18,7 +18,7 @@ const DerailCard = ({
   }, []);
   return (
     <>
-      <div className={`card-container p-1 ${isListView ? "list" : ""}`}>
+      <div className={`card-container p-point-5 ${isListView ? "list" : ""}`}>
         <section
           className="img-section"
           style={{
@@ -26,13 +26,13 @@ const DerailCard = ({
               employee.imagePortraitUrl ||
               employee.imageWallOfLeetUrl ||
               "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png"
-            }) no-repeat center 20% / cover`,
+            }) no-repeat center 30% / cover`,
           }}
         ></section>
         <section className="detail-section mt-1 ">
           <div className="detail-fields mb-point-5">
             <div className="mb-point-5">
-              <p>
+              <p className="employee-name">
                 {" "}
                 <strong> {employee.name}</strong>
               </p>{" "}
