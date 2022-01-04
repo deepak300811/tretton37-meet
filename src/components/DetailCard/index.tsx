@@ -15,7 +15,7 @@ const DerailCard = ({
   useEffect(() => {
     const temp = empMainText.current;
     temp.innerHTML = empTempText;
-  }, []);
+  }, [empTempText]);
   return (
     <>
       <div className={`card-container p-point-5 ${isListView ? "list" : ""}`}>

@@ -9,23 +9,30 @@ const FilterAndTools = ({
   setEmployeesData,
   setIslistView,
   isListView,
+  setIsLoading,
+  setError,
+  error,
 }: {
   employeesData: IEmployee[];
   setEmployeesData: Function;
   setIslistView: Function;
   isListView: boolean;
+  setIsLoading: Function;
+  setError: Function;
+  error: any;
 }) => {
-  const [sortBy, setSortBy] = useState("");
-  // const [fetchCount, setFetchCount] = useState(0);
+  const [sortBy, setSortBy] = useState<string>("");
   const [tempArr, setTempArr] = useState<IEmployee[]>([]);
-  const [filterSort, setFilterSort] = useState(0);
+  const [filterSort, setFilterSort] = useState<number>(0);
   const inputRef = useRef(null) as React.MutableRefObject<HTMLInputElement>;
 
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true);
       try {
         const res = await axios.get("https://api.1337co.de/v3/employees");
         const temp: IEmployee[] = res.data;
+        setIsLoading(false);
         setEmployeesData(temp);
         setTempArr(temp);
         const filterInput = inputRef?.current?.value || "";
@@ -33,11 +40,26 @@ const FilterAndTools = ({
           setFilteredData(filterInput);
         }
       } catch (error) {
+        setIsLoading(false);
+        setError({ errorText: `${error.message} !`, errorType: "FETCH" });
         console.log("Error=", error);
       }
     };
     getData();
-  }, [setEmployeesData]);
+  }, [setEmployeesData, setError, setIsLoading]);
+
+  useEffect(() => {
+    if (
+      employeesData.length < 1 &&
+      error.errorType !== "FETCH" &&
+      inputRef?.current?.value.length > 0
+    ) {
+      setError({
+        errorText: "No employee matched with the searched Criterion !",
+        errorType: "FILTER",
+      });
+    }
+  }, [employeesData]);
 
   const selectSortBy = (e: ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value) {
@@ -63,6 +85,9 @@ const FilterAndTools = ({
     }
   }, [sortBy, filterSort]);
   const setFilteredData = (str: string) => {
+    if (error.errorType === "FILTER") {
+      setError({});
+    }
     setEmployeesData(
       tempArr.filter(
         (employee: IEmployee) =>
