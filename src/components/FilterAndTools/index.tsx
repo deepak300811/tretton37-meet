@@ -35,10 +35,6 @@ const FilterAndTools = ({
         setIsLoading(false);
         setEmployeesData(temp);
         setTempArr(temp);
-        const filterInput = inputRef?.current?.value || "";
-        if (filterInput.length > 0) {
-          setFilteredData(filterInput);
-        }
       } catch (error) {
         setIsLoading(false);
         setError({ errorText: `${error.message} !`, errorType: "FETCH" });
@@ -49,17 +45,17 @@ const FilterAndTools = ({
   }, [setEmployeesData, setError, setIsLoading]);
 
   useEffect(() => {
-    if (
-      employeesData.length < 1 &&
-      error.errorType !== "FETCH" &&
-      inputRef?.current?.value.length > 0
-    ) {
-      setError({
-        errorText: "No employee matched with the searched Criterion !",
-        errorType: "FILTER",
-      });
+    if (employeesData.length < 1 && inputRef?.current?.value.length > 0) {
+      setError((prev) =>
+        prev.errorType !== "FETCH"
+          ? {
+              errorText: "No employee matched with the searched Criterion !",
+              errorType: "FILTER",
+            }
+          : prev
+      );
     }
-  }, [employeesData]);
+  }, [employeesData, setError]);
 
   const selectSortBy = (e: ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value) {
@@ -74,16 +70,20 @@ const FilterAndTools = ({
   };
   useEffect(() => {
     if (sortBy.length > 0) {
-      const tempSortedArr = [...employeesData];
-      if (sortBy === "name") {
-        tempSortedArr.sort(sortCompareName);
-      } else if (sortBy === "location") {
-        tempSortedArr.sort(sortCompareLocation);
-      }
-      const tempArrr = [...tempSortedArr];
-      setEmployeesData(tempArrr);
+      setEmployeesData((prev) => {
+        const tempSortedArr = [...prev];
+        if (sortBy === "name") {
+          tempSortedArr.sort(sortCompareName);
+        } else if (sortBy === "location") {
+          tempSortedArr.sort(sortCompareLocation);
+        }
+        const tempArrr = [...tempSortedArr];
+        prev = tempArrr;
+        return prev;
+      });
     }
-  }, [sortBy, filterSort]);
+  }, [sortBy, filterSort, setEmployeesData]);
+
   const setFilteredData = (str: string) => {
     if (error.errorType === "FILTER") {
       setError({});
