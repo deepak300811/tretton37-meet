@@ -66,6 +66,9 @@
   }
 }
 @media (max-width: 1023px) and (min-width: 600px) {
+  .card-container.list {
+    padding-top: 1rem;
+  }
   .card-container.list .img-section {
     max-width: 50%;
   }
