@@ -14,17 +14,19 @@
   width: 100%;
 }
 .card-container.list .img-section {
-  max-width: 30%;
+  height: unset;
+  max-width: 27%;
+  align-self: stretch;
 }
 .card-container .detail-section {
-  padding: 0.2rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
 }
 .card-container.list .detail-section {
   padding: 2rem;
   flex-direction: column;
-  width: 70%;
+  width: 73%;
   justify-content: unset;
 }
 .card-container.list .socials {
@@ -50,17 +52,21 @@
 .card-container.list .employee-name {
   font-size: 1.5rem;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .card-container.list {
     flex-direction: column;
+  }
+  .card-container.list .img-section {
+    align-self: center;
+    height: 401px;
   }
   .card-container.list .detail-section {
     width: 100%;
   }
 }
-@media (max-width: 1024px) and (min-width: 600px) {
+@media (max-width: 1023px) and (min-width: 600px) {
   .card-container.list .img-section {
-    max-width: 40%;
+    max-width: 50%;
   }
 }
 @media (max-width: 599px) {
@@ -69,5 +75,8 @@
   }
   .card-container.list .detail-section {
     padding: 2rem 0.4rem;
+  }
+  .card-container .detail-section {
+    padding: 1rem;
   }
 }

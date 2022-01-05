@@ -18,7 +18,7 @@ const DerailCard = ({
   }, [empTempText]);
   return (
     <>
-      <div className={`card-container p-point-5 ${isListView ? "list" : ""}`}>
+      <div className={`card-container  ${isListView ? "list" : ""}`}>
         <section
           className="img-section"
           style={{
@@ -26,7 +26,7 @@ const DerailCard = ({
               employee.imagePortraitUrl ||
               employee.imageWallOfLeetUrl ||
               "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png"
-            }) no-repeat center 30% / cover`,
+            }) no-repeat center 10% / cover`,
           }}
         ></section>
         <section className="detail-section mt-1 ">
