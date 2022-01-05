@@ -6,6 +6,7 @@
 .card-holder.list {
   display: flex;
   flex-direction: column;
+  grid-gap: 0rem;
 }
 @media (min-width: 1024px) and (max-width: 1250px) {
   .card-holder {
