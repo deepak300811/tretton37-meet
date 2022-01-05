@@ -4,12 +4,8 @@ import CardHolder from "../components/CardHolder";
 import Loader from "components/Loader";
 import Error from "components/Error";
 import IEmployee from "types/Employee";
+import IError from "types/IError";
 import "./styles.css";
-
-interface IError {
-  errorType: string;
-  errorText: string;
-}
 
 const EmployeeContainer = () => {
   const [employeesData, setEmployeesData] = useState<IEmployee[]>([]);

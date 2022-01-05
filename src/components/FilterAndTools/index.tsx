@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useRef } from "react";
 import IEmployee from "types/Employee";
+import IError from "types/IError";
 import "./styles.css";
 
 const FilterAndTools = ({
@@ -19,7 +20,7 @@ const FilterAndTools = ({
   isListView: boolean;
   setIsLoading: Function;
   setError: Function;
-  error: any;
+  error: IError;
 }) => {
   const [sortBy, setSortBy] = useState<string>("");
   const [tempArr, setTempArr] = useState<IEmployee[]>([]);
