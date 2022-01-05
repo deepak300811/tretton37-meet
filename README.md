@@ -11,8 +11,8 @@
 
 # Architecture of the project 🎁
 
-1. A Container conponent holds all the view of the application. The a wider view the application has two parts - first, FilterAndTools and second, CardHolder.
-2. Whole app is devided into components, all components are available in a separate components folder. Components used in this web app are CardHolder, DetailCard, Error, FilterAndTools, and Loader. 
+1. A Container conponent holds all the view of the application. Wider view the application has two parts - 1. FilterAndTools and 2. CardHolder.
+2. Whole app is devided into components, all components are available in a separate components folder. Components used in this webapp are CardHolder, DetailCard, Error, FilterAndTools, and Loader. 
 3. FilterAndTools is a component where main fetching and filtering of the data happens, then this data is fed to CardHolder which generates the grid or list of DetailCards as per the user requirement.
 
 # User Stories Developed🙋🏻‍♂️
