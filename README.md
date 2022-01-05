@@ -17,11 +17,11 @@
 
 # User Stories Developed🙋🏻‍♂️
 
-1. Responsive design, works on mobile and tablets - Based on the trend each website that is made, it has to work perfectly on various screen sizes, otherwise customer satisfaction will suffer. So have taken this on highest priority and implemented this story.
+1. Responsive design, works on mobile and tablets - Based on the usecase each website that is made, it has to work perfectly on various screen sizes, otherwise customer satisfaction will suffer. So have taken this on highest priority and implemented this story.
 2. Use modern CSS throughout the application (css-grid) - Css grid makes it easier to manage view in a 2 dimentional space, also it helps in maintaining consistant and neat views on varying screen sizes. Like in our example we are showing grid of 4 employee details on large screen, and then 3 and then 2, then 1 employee in a row based on screen size. This all can happen easily with Grids.
 3. Sort by name and office - Implementing Sorting by name and office gave me an opportunity to showcase how i can handel different state changes based on the user selection. So i opted this story. 
-4. Filter by name and office - When we have large records it is absolutely necessary to allow user to traverse and find the information needed by them. Seeing the necessity of Filter functionality, I opted to implement it.
-5. Enable switch between a grid and a different view (such as list) - It came as something of a new exciting requirement, where the hide and design will change in real time based on the user preference. If they want a superficial look they can stay on the grid view, if they want detailed information of employees, they can toggle to list view.
+4. Filter by name and office - When we have large records, it is absolutely necessary to allow user to search and find the information needed by them. Seeing the necessity of Filter functionality, I opted to implement it.
+5. Enable switch between a grid and a different view (such as list) - It came as something of a new exciting requirement, where the information that is desplayed on screen and also it's design will change in real time based on the user preference. If they want a superficial look they can stay on the grid view, if they want detailed information of employees, they can toggle to list view.
 6. Available on a free public url (such as Azure, Heroku) - What is the use of a webapp developed by you, if you can't show it off outside of your machine ? This was the motivation behind making the developed webapp available on the public url.
 7. Use Typescript (or similar, no any’s!) - started using typescript recently, so wanted to do something with it. Also, One of the big benefits of typescript is to enable IDEs to provide a richer environment for spotting common errors as we type the code. Hence, it made my life easier throughout the lifecyle of development of this WebApp.
 
